@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://stahe.github.io/pt-sql-firebird-janv-2006/relacoes-entre-tabelas.html">
       
       
-        <link rel="prev" href="expressoes-sql.html">
+        <link rel="prev" href="as-expressoes-da-linguagem-sql.html">
       
       
-        <link rel="next" href="sql-avancado.html">
+        <link rel="next" href="aprofundamento-da-linguagem-sql.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -384,14 +386,14 @@
   
   
     <li class="md-nav__item">
-      <a href="expressoes-sql.html" class="md-nav__link">
+      <a href="as-expressoes-da-linguagem-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Expressões SQL
+    4. As expressões da linguagem SQL
   
 
     
@@ -507,14 +509,14 @@
   
   
     <li class="md-nav__item">
-      <a href="sql-avancado.html" class="md-nav__link">
+      <a href="aprofundamento-da-linguagem-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. SQL avançado
+    6. Aprofundamento da linguagem SQL
   
 
     
@@ -561,14 +563,14 @@
   
   
     <li class="md-nav__item">
-      <a href="instalacao-e-utilizacao-de-um-controlador-odbc-para-firebird.html" class="md-nav__link">
+      <a href="instalar-e-utilizar-um-controlador-odbc-para-o-firebird.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Instalação e utilização de um controlador ODBC para [Firebird]
+    8. Instalar e utilizar um controlador ODBC para o [Firebird]
   
 
     
@@ -600,39 +602,39 @@
 
 <h1 id="5-relacoes-entre-tabelas">5. <span style="color: #365f91">Relações entre tabelas</span></h1>
 <h2 id="51-chaves-estrangeiras">5.1. <span style="color: #4f81bd">Chaves estrangeiras</span></h2>
-<p>Uma base de dados relacional é um conjunto de tabelas ligadas entre si por relações. Vejamos um exemplo inspirado na tabela [BIBLIO] anterior, que tinha a seguinte estrutura:</p>
-<p><img src="images/100000000000014D0000008AB26B6EA2.png" width="266" height="110" style="width:7.049cm;height:2.921cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D0000008AB26B6EA2.png" /></p>
-<p>Um exemplo do conteúdo era o seguinte:</p>
+<p>Uma base de dados relacional é um conjunto de tabelas ligadas entre si por relações. Vejamos um exemplo inspirado na tabela [BIBLIO] anterior, cuja estrutura era a seguinte:</p>
+<p><img src="images/100000000000014D0000008AB26B6EA2.png" width="266" height="110" style="width:7.049cm;height:2.917cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D0000008AB26B6EA2.png" /></p>
+<p>Um exemplo de conteúdo era o seguinte:</p>
 <p><img src="images/1000000000000200000000AAB5E71811.png" width="410" height="136" style="width:10.839cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000200000000AAB5E71811.png" /></p>
-<p>Poderá querer obter informações sobre os vários autores destas obras, tais como <em>os</em> seus <em>nomes próprios</em> e apelidos, <em>data de nascimento</em> e <em>nacionalidade</em>. Vamos criar essa tabela. Clique com o botão direito do rato em [DBBIBLIO / Tabelas] e selecione a opção [Nova Tabela]:</p>
-<p><img src="images/10000000000001500000018E88305495.png" width="269" height="318" style="width:7.108cm;height:8.421cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001500000018E88305495.png" /></p>
-<p>Agora vamos criar a seguinte tabela [AUTHORS]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000008C0000006539F73B1A.png" width="112" height="81" style="display:inline-block; margin:4px;width:2.958cm;height:2.134cm;" class="odt-zoomable" data-zoom-src="images/100000000000008C0000006539F73B1A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000145000000673D89D830.png" width="260" height="82" style="display:inline-block; margin:4px;width:6.877cm;height:2.178cm;" class="odt-zoomable" data-zoom-src="images/1000000000000145000000673D89D830.png" /></td></tr></table>
+<p>Podemos querer obter informações sobre os diferentes autores destas obras, por exemplo, os seus <em>nom</em> e <em>prénom</em>, <em>a</em> sua <em>data de nascimento</em>, o seu <em>nationalité</em>. Vamos criar uma tabela com esses dados. Clicamos com o botão direito do rato em [DBBIBLIO / Tables] e selecionamos a opção [New Table]:</p>
+<p><img src="images/10000000000001500000018E88305495.png" width="269" height="318" style="width:7.108cm;height:8.419cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001500000018E88305495.png" /></p>
+<p>Vamos agora criar a seguinte tabela [AUTEURS]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000008C0000006539F73B1A.png" width="112" height="81" style="display:inline-block; margin:4px;width:2.958cm;height:2.138cm;" class="odt-zoomable" data-zoom-src="images/100000000000008C0000006539F73B1A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000145000000673D89D830.png" width="260" height="82" style="display:inline-block; margin:4px;width:6.877cm;height:2.178cm;" class="odt-zoomable" data-zoom-src="images/1000000000000145000000673D89D830.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>id
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">chave primária da tabela — utilizada para identificar de forma única uma linha</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apelido
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">chave primária da tabela — serve para identificar uma linha de forma única</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nom
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">apelido do autor</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nome
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">nome do autor</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>prénom
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">nome do autor, se aplicável</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>data_de_nascimento
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">nome próprio do autor, caso exista</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>date_naissance
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">data de nascimento</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nacionalidade
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">data de nascimento</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nationalite
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">país de origem</div></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">país de origem</div></td></tr></table>
 
-<p>O conteúdo da tabela [AUTHORS] pode ser o seguinte:</p>
-<p><img src="images/10000000000001770000009CA8D7412F.png" width="300" height="125" style="width:7.938cm;height:3.302cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001770000009CA8D7412F.png" /></p>
+<p>O conteúdo da tabela [AUTEURS] poderia ser o seguinte:</p>
+<p><img src="images/10000000000001770000009CA8D7412F.png" width="300" height="125" style="width:7.938cm;height:3.298cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001770000009CA8D7412F.png" /></p>
 <p>Voltemos à tabela [BIBLIO] e ao seu conteúdo:</p>
 <p><img src="images/1000000000000200000000AAB5E71811.png" width="410" height="136" style="width:10.839cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000200000000AAB5E71811.png" /></p>
-<p>Na coluna [AUTHOR] da tabela, já não é necessário introduzir o nome do autor. Em vez disso, é preferível introduzir o número de identificação que lhes foi atribuído na tabela [AUTHORS]. Vamos criar uma nova tabela chamada [BOOKS]. Para a criar, utilizaremos o script [biblio.sql] criado na secção<a href="#bibliosql"><u><span style="color: #0563c1"> 3.14.</span></u></a> Executamos este script utilizando a ferramenta [Script Executive, Ctrl-F12]:</p>
-<p><img src="images/10000000000001CE000000C03DB2BA7D.png" width="370" height="154" style="width:9.779cm;height:4.064cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000C03DB2BA7D.png" /></p>
-<p>Modificamos o script para criar a tabela BIBLIO, de modo a adaptá-lo à tabela BOOKS:</p>
+<p>Na rubrica [AUTEUR] da tabela, deixa de ser necessário indicar o nome do autor. É preferível indicar o número (id) que este possui na tabela [AUTEURS]. Criemos, portanto, uma nova tabela denominada [LIVRES]. Para a criar, vamos utilizar o script [biblio.sql] criado no parágrafo<a href="introducao-a-linguagem-sql.html#bibliosql"><u><span style="color: #0563c1"> 3.14.</span></u></a> Carregamos este script com a ferramenta [Script Executive, Ctrl-F12]:</p>
+<p><img src="images/10000000000001CE000000C03DB2BA7D.png" width="370" height="153" style="width:9.779cm;height:4.059cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CE000000C03DB2BA7D.png" /></p>
+<p>Alteramos o script de criação da tabela BIBLIO para o adaptar ao da tabela LIVRES:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -693,130 +695,130 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23"></a>
 <a id="__codelineno-5-24" name="__codelineno-5-24"></a>
 <a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="cm">/******************************************************************************/</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="cm">/****                          Unique Constraints                          ****/</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="cm">/****                                                     Restrições de exclusividade ****/</span>
 <a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="cm">/******************************************************************************/</span>
 <a id="__codelineno-5-28" name="__codelineno-5-28"></a>
 <a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">UNQ1_LIVRES</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="p">(</span><span class="n">TITRE</span><span class="p">);</span>
 <a id="__codelineno-5-30" name="__codelineno-5-30"></a>
 <a id="__codelineno-5-31" name="__codelineno-5-31"></a>
 <a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="cm">/******************************************************************************/</span>
-<a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="cm">/****                             Primary Keys                             ****/</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a><span class="cm">/****                                                           Chaves primárias ****/</span>
 <a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="cm">/******************************************************************************/</span>
 <a id="__codelineno-5-35" name="__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">PK_LIVRES</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<p>Iremos apenas comentar as alterações:</p>
+<p>Apenas comentamos as alterações:</p>
 <ul>
-  <li>linha 4: a coluna [AUTHOR] na tabela passa a ser um inteiro. Este número faz referência a um dos autores na tabela [AUTHORS] criada anteriormente.
+  <li>linha 4: o campo [AUTEUR] da tabela passa a ser um número inteiro. Este número remete para um dos autores da tabela [AUTEURS] criada anteriormente.
   </li>
-  <li>Linhas 11–19: Os nomes dos autores foram substituídos pelos seus IDs de autor.
+  <li>linhas 11-19: os nomes dos autores foram substituídos pelos respetivos números de autor.
   </li>
-  <li>linha 29: o nome da restrição foi alterado. Anteriormente, chamava-se [UNQ1_BIBLIO]. Agora chama-se [UNQ1_LIVRES]. Este nome pode ser qualquer coisa. No entanto, é preferível que seja significativo. Aqui, esse esforço não foi feito. As restrições em campos diferentes e em tabelas diferentes dentro de uma base de dados devem ser distinguidas por nomes diferentes. Recorde-se que a restrição na linha 29 exige que um título seja único dentro da tabela.
+  <li>linha 29: o nome da restrição foi alterado. Anteriormente chamava-se [ UNQ1_BIBLIO ]. Passa agora a chamar-se [ UNQ1_LIVRES ]. Este nome pode ser qualquer um. No entanto, é preferível que tenha algum sentido. Neste caso, esse esforço não foi feito. As restrições nos diferentes campos e nas diferentes tabelas de uma base de dados devem ser diferenciadas por nomes distintos. Recorde-se que a restrição da linha 29 exige que um título seja único na tabela.
   </li>
-  <li>Linha 36: Altere o nome da restrição na chave primária ID.
+  <li>linha 36: alteração do nome da restrição sobre a chave primária ID.
   </li>
 </ul>
 
-<p>Vamos executar este script. Se for bem-sucedido, obtemos a seguinte nova tabela [BOOKS]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000008500000076777FB9B3.png" width="107" height="95" style="display:inline-block; margin:4px;width:2.819cm;height:2.501cm;" class="odt-zoomable" data-zoom-src="images/100000000000008500000076777FB9B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001E5000000ABADDE5D06.png" width="388" height="137" style="display:inline-block; margin:4px;width:10.268cm;height:3.62cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E5000000ABADDE5D06.png" /></td></tr></table>
+<p>Vamos executar este script. Se for bem-sucedido, obtemos a seguinte nova tabela [LIVRES]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000008500000076777FB9B3.png" width="107" height="94" style="display:inline-block; margin:4px;width:2.819cm;height:2.498cm;" class="odt-zoomable" data-zoom-src="images/100000000000008500000076777FB9B3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001E5000000ABADDE5D06.png" width="388" height="137" style="display:inline-block; margin:4px;width:10.268cm;height:3.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000001E5000000ABADDE5D06.png" /></td></tr></table>
 
-<p>Poder-se-á questionar se, no final, ganhámos realmente alguma coisa. De facto, a tabela [BOOKS] lista os números dos autores em vez dos seus nomes. Uma vez que existem milhares de autores, associar um livro ao seu autor parece difícil. Felizmente, o SQL está aqui para nos ajudar. Permite-nos consultar várias tabelas ao mesmo tempo. Para este exemplo, apresentamos a consulta SQL que nos permite recuperar os títulos dos livros da biblioteca, juntamente com as informações dos seus autores. Vamos usar o editor SQL (F12) para executar a seguinte instrução SQL:</p>
+<p>Podemos questionar-nos se, afinal, saímos a ganhar com esta alteração. Com efeito, a tabela [LIVRES] apresenta números de autores em vez dos seus nomes. Como existem milhares de autores, a ligação entre um livro e o seu autor parece difícil de estabelecer. Felizmente, a linguagem SQL está aqui para nos ajudar. Permite-nos consultar várias tabelas ao mesmo tempo. A título de exemplo, apresentamos a consulta SQL, que nos permite obter os títulos dos livros da biblioteca, associados às informações dos seus autores. Utilizemos o editor SQL (F12) para emitir o comando SQL seguinte:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">date_naissance</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">AUTEURS</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">AUTEUR</span><span class="o">=</span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">ID</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">asc</span>
 </code></pre></div>
-<p>Ainda é cedo para explicar esta consulta SQL. Voltaremos a ela em breve. O resultado desta consulta é o seguinte:</p>
-<p><img src="images/1000000000000164000000AA7F9D92F7.png" width="285" height="136" style="width:7.539cm;height:3.6cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000164000000AA7F9D92F7.png" /></p>
-<p>Cada livro foi corretamente associado ao seu autor e às informações associadas.</p>
+<p>Ainda é cedo para explicar esta ordem SQL. Voltaremos a este assunto em breve. O resultado desta consulta é o seguinte:</p>
+<p><img src="images/1000000000000164000000AA7F9D92F7.png" width="285" height="136" style="width:7.539cm;height:3.598cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000164000000AA7F9D92F7.png" /></p>
+<p>Cada livro foi associado corretamente ao seu autor e às informações que lhe dizem respeito.</p>
 <p>Vamos resumir o que acabámos de fazer:</p>
 <ul>
-  <li>temos duas tabelas que contêm diferentes tipos de informação:
+  <li>temos duas tabelas que reúnem informações de natureza diferente:
     <ul>
-      <li>a tabela AUTHORS contém informações sobre autores
+      <li>a tabela AUTEURS reúne informações sobre os autores
       </li>
-      <li>a tabela BOOKS contém informações sobre os livros adquiridos pela biblioteca
+      <li>a tabela LIVRES reúne informações sobre os livros adquiridos pela biblioteca
       </li>
     </ul>
   </li>
-  <li>estas tabelas estão ligadas entre si. Um livro deve ter um autor. Pode até ter vários. Este cenário não foi considerado aqui. O campo [AUTHOR] na tabela [BOOKS] faz referência a uma linha na tabela [AUTHORS]. Isto é chamado de <b>relação</b>.
+  <li>estas tabelas estão interligadas. Um livro tem, necessariamente, um autor. Pode até ter vários. Este caso não foi aqui considerado. A coluna [AUTEUR] da tabela [LIVRES] faz referência a uma linha da tabela [AUTEURS]. A isto chama-se uma <b>relação</b>.
   </li>
 </ul>
 
-<p>A relação entre a tabela [BOOKS] e a tabela [AUTHORS] é, na verdade, um tipo de restrição: uma linha na tabela [BOOKS] deve ter sempre um ID de autor que exista na tabela [AUTHORS]. Se uma linha em [BOOKS] tivesse um ID de autor que não existisse na tabela [AUTHORS], estaríamos numa situação anómala em que não conseguiríamos encontrar o autor de um livro.</p>
-<p>O SGBD é capaz de garantir que esta restrição seja sempre satisfeita. Para tal, iremos adicionar uma restrição à tabela [BOOKS]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000009E000000EA2C064F16.png" width="126" height="187" style="display:inline-block; margin:4px;width:3.339cm;height:4.944cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000EA2C064F16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AD0000009065CA70B9.png" width="138" height="115" style="display:inline-block; margin:4px;width:3.658cm;height:3.044cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AD0000009065CA70B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FE000000EB317A31FD.png" width="203" height="188" style="display:inline-block; margin:4px;width:5.378cm;height:4.976cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000000EB317A31FD.png" /></td></tr></table>
+<p>A relação que liga a tabela [LIVRES] à tabela [AUTEURS] é, na verdade, uma forma de restrição: uma linha da tabela [LIVRES] deve ter sempre um número de autor que exista na tabela [AUTEURS]. Se uma linha da tabela [LIVRES] tivesse um número de autor que não existisse na tabela [AUTEURS], estaríamos numa situação anómala em que não seria possível identificar o autor de um livro.</p>
+<p>A tabela SGBD permite verificar se esta restrição é sempre cumprida. Para tal, vamos adicionar uma restrição à tabela [LIVRES]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000009E000000EA2C064F16.png" width="126" height="187" style="display:inline-block; margin:4px;width:3.339cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000EA2C064F16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000AD0000009065CA70B9.png" width="138" height="115" style="display:inline-block; margin:4px;width:3.658cm;height:3.048cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AD0000009065CA70B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FE000000EB317A31FD.png" width="203" height="188" style="display:inline-block; margin:4px;width:5.378cm;height:4.969cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000000EB317A31FD.png" /></td></tr></table>
 
-<p>A ligação que une a coluna [AUTHOR] da tabela [BOOKS] ao campo [ID] da tabela [AUTHORS] é denominada relação <strong>de chave estrangeira</strong>. O campo [AUTHOR] da tabela [BOOKS] é designado como «chave estrangeira» no assistente acima. Definir uma chave estrangeira significa que o valor de uma coluna [c1] numa tabela [T1] deve existir na coluna [c2] da tabela [T2]. A coluna [c1] é referida como a «chave estrangeira» da tabela T1 na coluna [c2] da tabela [T2]. A coluna [c2] é frequentemente a chave primária da tabela [T2], mas isso não é obrigatório.</p>
-<p>Definimos a chave estrangeira [AUTHOR] da tabela [BOOKS] no campo [ID] da tabela [AUTHORS] da seguinte forma:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F9000000C501ADE2AD.png" width="509" height="98" style="display:inline-block; margin:4px;width:13.455cm;height:2.605cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000C501ADE2AD.png" /></td></tr></table>
+<p>A ligação que une a rubrica [AUTEUR] da tabela [LIVRES] ao campo [ID] da tabela [AUTEURS] denomina-se «ligação de <strong>chave estrangeira</strong>». A coluna [AUTEUR] da tabela [LIVRES] é designada por «chave estrangeira» ou «foreign key» no assistente acima. Definir uma chave estrangeira significa que o valor de uma coluna [c1] de uma tabela [T1] deve existir na coluna [c2] da tabela [T2]. A coluna [c1] é designada como «chave estrangeira» da tabela T1 em relação à coluna [c2] da tabela [T2]. A coluna [c2] é frequentemente a chave primária da tabela [T2], mas isso não é obrigatório.</p>
+<p>Definimos a chave estrangeira [AUTEUR] da tabela [LIVRES] no campo [ID] da tabela [AUTEURS] da seguinte forma:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003F9000000C501ADE2AD.png" width="509" height="99" style="display:inline-block; margin:4px;width:13.455cm;height:2.607cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000C501ADE2AD.png" /></td></tr></table>
 
 <ol>
   <li>nome da restrição: livre
   </li>
-  <li>coluna &quot;chave estrangeira&quot;, neste caso a coluna [AUTHOR] da tabela [BOOKS]
+  <li>coluna «chave estrangeira», neste caso a coluna [AUTEUR] da tabela [LIVRES]
   </li>
-  <li>tabela referenciada pela chave estrangeira. Aqui, a coluna [AUTHOR] na tabela [BOOKS] deve ter um valor na coluna [ID] da tabela [AUTHORS]. Portanto, a tabela [AUTHORS] é a tabela referenciada.
+  <li>tabela referenciada pela chave estrangeira. Neste caso, a coluna [AUTEUR] da tabela [LIVRES] deve ter um valor na coluna [ID] da tabela [AUTEURS]. É, portanto, a tabela [AUTEURS] que é referenciada.
   </li>
-  <li>Coluna referenciada pela chave estrangeira. Aqui, a coluna [ID] da tabela [AUTHORS].
+  <li>Coluna referenciada pela chave estrangeira. Neste caso, a coluna [ID] da tabela [AUTEURS].
   </li>
 </ol>
 
 <p>Validamos esta restrição:</p>
-<p><img src="images/10000000000001E900000095302F1B8B.png" width="391" height="119" style="width:10.349cm;height:3.154cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E900000095302F1B8B.png" /></p>
+<p><img src="images/10000000000001E900000095302F1B8B.png" width="391" height="119" style="width:10.349cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E900000095302F1B8B.png" /></p>
 <p>Se tudo correr bem, é aceite:</p>
-<p><img src="images/10000000000001EE0000010B27B969F6.png" width="395" height="214" style="width:10.458cm;height:5.652cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE0000010B27B969F6.png" /></p>
-<p>Qual é a consequência desta nova restrição de chave estrangeira? Utilizando o editor SQL (F12), vamos tentar inserir uma linha na tabela BOOKS com um ID de autor inexistente:</p>
-<p><img src="images/10000000000001E2000000C16CA79B35.png" width="385" height="154" style="width:10.199cm;height:4.083cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000000C16CA79B35.png" /></p>
-<p>A operação [INSERT] acima tentou inserir um livro com um ID de autor inexistente (100). A execução da consulta falhou. A mensagem de erro associada indica que houve uma violação da restrição de chave estrangeira &quot;FK_BOOKS_AUTHORS&quot;. Esta é a que acabámos de definir.</p>
+<p><img src="images/10000000000001EE0000010B27B969F6.png" width="395" height="213" style="width:10.458cm;height:5.648cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EE0000010B27B969F6.png" /></p>
+<p>Qual é a consequência desta nova restrição de chave estrangeira? Com o editor SQL (F12), vamos tentar inserir uma linha na tabela LIVRES com um número de autor inexistente:</p>
+<p><img src="images/10000000000001E2000000C16CA79B35.png" width="385" height="155" style="width:10.199cm;height:4.089cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001E2000000C16CA79B35.png" /></p>
+<p>A operação [INSERT] acima tentou inserir um livro com um número de autor (100) inexistente. A execução da consulta falhou. A mensagem de erro associada indica que ocorreu uma violação da restrição de chave estrangeira «FK_LIVRES_AUTEURS». Trata-se da restrição que acabámos de definir.</p>
 <h2 id="52-operacoes-de-juncao-entre-duas-tabelas">5.2. <span style="color: #4f81bd">Operações de junção entre duas tabelas</span></h2>
-<p>Ainda na base de dados [DBBIBLIO] (ou qualquer outra base de dados), vamos criar duas tabelas de teste denominadas TA e TB e defini-las da seguinte forma:</p>
+<p>Ainda na base de dados [DBBIBLIO] (ou noutra base de dados, não importa), vamos criar duas tabelas de teste chamadas TA e TB, definidas da seguinte forma:</p>
 <p><strong>Tabela TA</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012E00000034EE43AFB1.png" width="241" height="42" style="display:inline-block; margin:4px;width:6.389cm;height:1.101cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E00000034EE43AFB1.png" /><div style="margin:0 0 0.5em 0">- ID: chave primária da tabela TA</div><div style="margin:0 0 0.5em 0">- DATA: dados arbitrários</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000005600000046ADC07D03.png" width="69" height="56" style="display:inline-block; margin:4px;width:1.819cm;height:1.482cm;" class="odt-zoomable" data-zoom-src="images/100000000000005600000046ADC07D03.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012E00000034EE43AFB1.png" width="241" height="42" style="display:inline-block; margin:4px;width:6.389cm;height:1.099cm;" class="odt-zoomable" data-zoom-src="images/100000000000012E00000034EE43AFB1.png" /><div style="margin:0 0 0.5em 0">- ID: chave primária da tabela TA</div><div style="margin:0 0 0.5em 0">- DATA: um dado qualquer</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000005600000046ADC07D03.png" width="69" height="56" style="display:inline-block; margin:4px;width:1.819cm;height:1.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000005600000046ADC07D03.png" /></td></tr></table>
 
 <p><strong>Tabela TB</strong></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014000000045D0BD93DD.png" width="256" height="55" style="display:inline-block; margin:4px;width:6.768cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/100000000000014000000045D0BD93DD.png" /><div style="margin:0 0 0.5em 0">- ID: chave primária da tabela TB</div><div style="margin:0 0 0.5em 0">- IDTA: chave estrangeira da tabela TB que faz referência à coluna ID da tabela TA. Assim, um valor da coluna IDTA da tabela TA deve existir na coluna ID da tabela TA</div><div style="margin:0 0 0.5em 0">- VALUE: quaisquer dados</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A000000045234CFE2D.png" width="128" height="55" style="display:inline-block; margin:4px;width:3.388cm;height:1.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A000000045234CFE2D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000014000000045D0BD93DD.png" width="256" height="55" style="display:inline-block; margin:4px;width:6.768cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/100000000000014000000045D0BD93DD.png" /><div style="margin:0 0 0.5em 0">- ID: chave primária da tabela TB</div><div style="margin:0 0 0.5em 0">- IDTA: chave estrangeira da tabela TB que faz referência à coluna ID da tabela TA. Assim, um valor da coluna IDTA da tabela TA deve existir na coluna ID da tabela TA</div><div style="margin:0 0 0.5em 0">- VALEUR: qualquer valor</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000A000000045234CFE2D.png" width="128" height="55" style="display:inline-block; margin:4px;width:3.388cm;height:1.459cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A000000045234CFE2D.png" /></td></tr></table>
 
-<p>No editor SQL (F12), iremos executar instruções SQL que utilizam simultaneamente as tabelas TA e TB.</p>
+<p>No editor SQL (F12), vamos emitir ordens SQL que utilizam simultaneamente as duas tabelas TA e TB.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">TA</span><span class="p">,</span><span class="w">  </span><span class="n">TB</span>
 </code></pre></div>
 <p><img src="images/10000000000000F2000000ADA94486D3.png" width="193" height="138" style="width:5.119cm;height:3.658cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000ADA94486D3.png" /></p>
-<p>A instrução SQL utiliza a palavra-chave FROM para referenciar as tabelas TA e TB. A operação FROM TA, TB fará com que seja criada uma nova tabela temporária, na qual cada linha da tabela TA será unida a cada linha da tabela TB. Assim, se a tabela TA tiver NA linhas e a tabela TB tiver NB linhas, a tabela resultante terá NA x NB linhas. Isto é mostrado na captura de ecrã acima. Além disso, cada linha contém as colunas de ambas as tabelas. As colunas especificadas na ordem [SELECT <em>col1</em>, <em>col2</em>, ... FROM ...] indicam quais devem ser incluídas. Aqui, a palavra-chave * indica que todas as colunas da tabela resultante são solicitadas. A tabela resultante da instrução SQL anterior é por vezes referida como o <strong>produto cartesiano</strong> das tabelas TA e TB.</p>
-<p>Acima, cada linha da tabela TA foi associada a cada linha da tabela TB. Geralmente, queremos associar uma linha de TB a uma linha de TA que tenha <strong>uma relação</strong> com ela. Esta relação assume frequentemente a forma de uma restrição de chave estrangeira. É o que acontece aqui. A uma linha na tabela TA, podemos associar as linhas na tabela TB que satisfazem a relação TB.IDTA=TA.ID. Existem várias formas de consultar isto:</p>
+<p>A ordem SQL envolve, a seguir à palavra-chave FROM, as duas tabelas TA e TB. A operação FROM TA, TB irá provocar a criação temporária de uma nova tabela na qual cada linha da tabela TA será associada a cada uma das linhas da tabela TB. Assim, se a tabela TA tiver NA linhas e a tabela TB tiver NB linhas, a tabela resultante terá NA × NB linhas. É isso que mostra a captura de ecrã acima. Além disso, cada linha contém as colunas das duas tabelas. As colunas <em>coli</em> especificadas na ordem [SELECT col1, col2, ... FROM ...] indicam aquelas que devem ser mantidas. Aqui, a palavra-chave * indica que são solicitadas todas as colunas da tabela resultante. Por vezes, diz-se que a tabela resultante da ordem anterior SQL é o <strong>produto cartesiano</strong> das tabelas TA e TB.</p>
+<p>No exemplo acima, cada linha da tabela TA foi associada a cada linha da tabela TB. Em geral, pretende-se associar a uma linha da tabela TA as linhas da tabela TB que têm <strong>uma relação</strong> com ela. Esta relação assume frequentemente a forma de uma restrição de chave estrangeira. É o que acontece neste caso. A uma linha da tabela TA, podem ser associadas as linhas da tabela TB que satisfazem a relação TB.IDTA=TA.ID. Existem várias formas de solicitar isto:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span>
 </code></pre></div>
-<p>A instrução SQL anterior é semelhante à anterior, com duas diferenças:</p>
+<p>A ordem SQL é análoga à anterior, mas apresenta duas diferenças:</p>
 <ul>
-  <li>as linhas de resultado do produto cartesiano TA x TB são filtradas por uma cláusula WHERE que associa a uma linha na tabela TA apenas as linhas da tabela TB que satisfazem a relação TB.IDTA=TA.ID
+  <li>as linhas resultantes do produto cartesiano TA x TB são filtradas por uma cláusula WHERE que associa a uma linha da tabela TA, as únicas linhas da tabela TB que satisfazem a relação TB.IDTA=TA.ID
   </li>
-  <li>apenas determinadas colunas são solicitadas utilizando a sintaxe [T.col], em que T é o nome de uma tabela e col é o nome de uma coluna nessa tabela. Esta sintaxe resolve qualquer ambiguidade que possa surgir se duas tabelas tiverem colunas com o mesmo nome. Quando esta ambiguidade não existe, a sintaxe [col] pode ser utilizada sem especificar a tabela para essa coluna.
+  <li>só são solicitadas determinadas colunas com a sintaxe [T.col], em que T é o nome de uma tabela e col o nome de uma coluna dessa tabela. Esta sintaxe permite eliminar a ambiguidade que poderia surgir se duas tabelas tivessem colunas com o mesmo nome. Quando essa ambiguidade não existe, pode-se utilizar a sintaxe [col] sem especificar a tabela a que essa coluna pertence.
   </li>
 </ul>
 
-<p>O resultado é o seguinte:</p>
-<p><img src="images/10000000000000CA000000467C36DE6B.png" width="162" height="56" style="width:4.277cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA000000467C36DE6B.png" /></p>
-<p>O mesmo resultado pode ser obtido com a seguinte instrução SQL:</p>
+<p>O resultado obtido é o seguinte:</p>
+<p><img src="images/10000000000000CA000000467C36DE6B.png" width="162" height="56" style="width:4.277cm;height:1.478cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA000000467C36DE6B.png" /></p>
+<p>O mesmo resultado pode ser obtido com a seguinte ordem SQL:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="n">TB</span><span class="p">.</span><span class="n">idta</span>
 </code></pre></div>
-<p>O termo [inner join] dá origem ao nome «inner join» atribuído a este tipo de operação entre duas tabelas. Veremos que também existe um «outer join». Num inner join, a ordem das tabelas na consulta não tem efeito no resultado: <strong>FROM TA inner join TB</strong> é equivalente a <strong>FROM TB inner join TA</strong>.</p>
-<p>A ordem SQL anterior inclui no conjunto de resultados apenas as linhas da tabela TA que são referenciadas por pelo menos uma linha da tabela TB. Assim, a linha [3, data3] em TA não aparece no resultado porque não é referenciada por uma linha em TB. Poderá querer todas as linhas de TA, sejam elas referenciadas ou não por uma linha em TB. Nesse caso, utiliza-se uma <strong>junção externa à esquerda</strong> entre as duas tabelas:</p>
+<p>Do termo [inner join] deriva o nome «junção interna», atribuído a este tipo de operações entre duas tabelas. Veremos que existe também uma «junção externa». Numa junção interna, a ordem das tabelas na consulta não tem qualquer impacto no resultado: <strong>FROM TA inner join TB</strong> é equivalente a <strong>FROM TB inner join TA</strong>.</p>
+<p>A instrução anterior SQL inclui na tabela resultante apenas as linhas da tabela TA referenciadas por, pelo menos, uma linha da tabela TB. Assim, a linha de TA [3, data3] não aparece no resultado, pois não é referenciada por uma linha de TB. Pode ser que se pretenda obter todas as linhas da tabela TA, independentemente de estarem ou não referenciadas por uma linha da tabela TB. Nesse caso, utiliza-se uma <strong>junção externa</strong> entre as duas tabelas:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span>
 </code></pre></div>
-<p><img src="images/10000000000000CA0000005831DE623C.png" width="162" height="70" style="width:4.277cm;height:1.863cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA0000005831DE623C.png" /></p>
-<p>Aqui temos uma <strong>junção externa à esquerda</strong>. Para compreender o termo «FROM TA left outer join TB», imagine uma junção com a tabela TA à esquerda e a tabela TB à direita. Todas as linhas da tabela à esquerda aparecem no resultado de uma junção externa à esquerda, mesmo aquelas para as quais a condição de junção não é satisfeita. Esta condição de junção não é necessariamente uma restrição de chave estrangeira, embora esse seja o caso mais comum.</p>
+<p><img src="images/10000000000000CA0000005831DE623C.png" width="162" height="70" style="width:4.277cm;height:1.857cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CA0000005831DE623C.png" /></p>
+<p>Temos aqui uma junção externa à esquerda («<strong>left outer join</strong>»). Para compreender o termo «FROM TA left outer join TB», é preciso imaginar uma junção com a tabela TA à esquerda e a tabela TB à direita. Todas as linhas da tabela da esquerda aparecem no resultado de uma junção externa à esquerda, mesmo aquelas para as quais a relação de junção não é verificada. Esta relação de junção não é necessariamente uma restrição de chave estrangeira, embora seja, no entanto, o caso mais comum.</p>
 <p>Na seguinte ordem:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="p">,</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="k">data</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">valeur</span><span class="p">,</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">TB</span><span class="w"> </span><span class="k">left</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">TA</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">TA</span><span class="p">.</span><span class="n">ID</span><span class="o">=</span><span class="w"> </span><span class="n">TB</span><span class="p">.</span><span class="n">IDTA</span>
 </code></pre></div>
-<p>a tabela TB está no lado «esquerdo» da junção externa. Portanto, todas as linhas da TB aparecerão no resultado:</p>
+<p>é a tabela TB que está à «esquerda» na junção externa. Assim, todas as linhas de TB estarão presentes no resultado:</p>
 <p><img src="images/10000000000000C9000000461F95A28D.png" width="161" height="56" style="width:4.247cm;height:1.478cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C9000000461F95A28D.png" /></p>
-<p>Ao contrário de uma junção interna, a ordem das tabelas é importante neste caso. Existem também as junções externas à direita:</p>
+<p>Ao contrário da junção interna, a ordem das tabelas é, portanto, importante. Existem também junções externas direitas:</p>
 <ul>
-  <li>FROM TA LEFT OUTER JOIN TB é equivalente a FROM TB RIGHT OUTER JOIN TA: a tabela TA está à esquerda
+  <li>FROM TA left outer join TB é equivalente a FROM TB right outer join TA: a tabela TA está à esquerda
   </li>
-  <li>FROM TB LEFT OUTER JOIN TA é equivalente a FROM TA RIGHT OUTER JOIN TB: a tabela TB está à esquerda
+  <li>FROM TB com uma junção externa à esquerda com TA é equivalente a FROM TA com uma junção externa à direita com TB: a tabela TB está à esquerda
   </li>
 </ul>
 
-<p>Agora que compreendemos os conceitos básicos da consulta simultânea a várias tabelas, podemos avançar para consultas de bases de dados mais complexas.</p>
+<p>Agora que já conhecemos os fundamentos da exploração simultânea de várias tabelas, podemos abordar operações de consulta mais complexas nas bases de dados.</p>
 
 
 

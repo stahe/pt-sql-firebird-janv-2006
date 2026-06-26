@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -394,14 +396,14 @@
   
   
     <li class="md-nav__item">
-      <a href="expressoes-sql.html" class="md-nav__link">
+      <a href="as-expressoes-da-linguagem-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    4. Expressões SQL
+    4. As expressões da linguagem SQL
   
 
     
@@ -448,14 +450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="sql-avancado.html" class="md-nav__link">
+      <a href="aprofundamento-da-linguagem-sql.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    6. SQL avançado
+    6. Aprofundamento da linguagem SQL
   
 
     
@@ -502,14 +504,14 @@
   
   
     <li class="md-nav__item">
-      <a href="instalacao-e-utilizacao-de-um-controlador-odbc-para-firebird.html" class="md-nav__link">
+      <a href="instalar-e-utilizar-um-controlador-odbc-para-o-firebird.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    8. Instalação e utilização de um controlador ODBC para [Firebird]
+    8. Instalar e utilizar um controlador ODBC para o [Firebird]
   
 
     
@@ -540,12 +542,13 @@
 
 
 <h1 id="1-introducao">1. <span style="color: #365f91">Introdução</span></h1>
-<p>O PDF deste documento está disponível |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBXp2x6cs15Q6VUhQ8AUoR2AedPZUw_kgkqExYuonFXewA?e=AWGAYh">AQUI</a>|.</p>
-<p>Este documento baseia-se num documento semelhante escrito em 1991 para a Oracle e adapta-o para o SGBD Firebird. Em 1991, o conteúdo principal do documento foi extraído da documentação oficial da Oracle e, em certos pontos, de um excelente livro da época escrito por Christian MAREE e Guy LEDANT: *SQL: Introdução, Programação e Domínio*, publicado pela EYROLLES. Tanto quanto sei, este livro já não se encontra disponível. Os autores escreveram um novo livro que ainda não tive oportunidade de ler: *SQL 2: Introdução / Programação*.</p>
-<p>SQL (<em>Structured Query Language</em>) é uma linguagem padrão para criar, manter e consultar bases de dados relacionais. É em grande parte independente do SGBDR utilizado. Embora os exemplos neste documento tenham sido escritos utilizando o SGBDR Firebird, a maioria deles pode ser reproduzida com qualquer SGBDR relacional. No Windows, existem vários SGBDs disponíveis: produtos de código aberto, como MySQL, Postgres, Firebird e SQL Server 2005, bem como produtos comerciais: Access, SQL Server e Oracle. Todos estes SGBDs suportam a linguagem SQL, embora por vezes com variações proprietárias — frequentemente extensões da linguagem SQL padrão.</p>
-<p>O SGBD Firebird foi escolhido porque possui a funcionalidade de encapsular uma base de dados num único ficheiro. Isto torna conveniente para os alunos guardarem este ficheiro numa pen USB, para que possam utilizá-lo nos seus computadores pessoais ou nos da sua escola ou universidade.</p>
-<p>Este documento destina-se a principiantes ou a quem deseja refrescar os seus conhecimentos de SQL. Não pretende abranger o SQL na sua totalidade. Conceitos de programação (procedimentos armazenados, programação SQL, API SQL), por exemplo, não são abordados, nem os relacionados com a administração de SGBDs.</p>
-<p>Serge Tahé, janeiro de 2006</p>
+<p>O PDF deste documento está disponível |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBXp2x6cs15Q6VUhQ8AUoR2AedPZUw_kgkqExYuonFXewA?e=9h1g4w">AQUI</a>|.</p>
+<p>Os exemplos do documento estão disponíveis |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQBn8EOWIXxGQawR8kcEhE8QAb6fjg8OZU9sRB8tHUsXCCk?e=k94eeR">AQUI</a>|.</p>
+<p>Este documento retoma um documento semelhante escrito em 1991 para a Oracle e adapta-o ao SGBD Firebird. Em 1991, o conteúdo essencial do documento provinha da documentação oficial do ORACLE e, em alguns pontos, de uma excelente obra da época escrita por Christian MAREE e Guy LEDANT: SQL Iniciação, Programação e Domínio, publicado pela EYROLLES. Tanto quanto sei, este livro já não existe. Os autores escreveram um novo livro que ainda não tive oportunidade de ler: SQL 2 Iniciação / Programação.</p>
+<p>SQL (<em>Structured Query Language</em>) é uma linguagem padrão para a criação, manutenção e consulta de bases de dados relacionais. É amplamente independente do SGBD utilizado. Embora os exemplos deste documento tenham sido escritos utilizando o SGBD Firebird, a maioria deles pode, no entanto, ser reproduzida com qualquer SGBD relacional. No Windows, existem vários SGBD: produtos livres como o MySQL, o Postgres, o Firebird, o SQL Express 2005 e também produtos comerciais: Access, SQL Server, Oracle. Todos estes SGBD suportam a linguagem SQL, mas por vezes com variantes proprietárias, frequentemente extensões introduzidas na linguagem SQL padrão.</p>
+<p>O SGBD Firebird foi escolhido porque tem a característica de encapsular uma base de dados num único ficheiro. É, portanto, prático para os estudantes colocarem esse ficheiro numa pen drive USB, a fim de o utilizarem no seu computador pessoal ou nos computadores da sua escola ou universidade.</p>
+<p>Este documento destina-se a principiantes ou a pessoas que desejem refrescar os seus conhecimentos sobre o SQL. Não pretende abranger o SQL na íntegra. Os conceitos de programação (procedimentos armazenados, programação SQL, API, SQL), por exemplo, não são abordados, nem os relativos à administração de um SGBD.</p>
+<p><strong>Serge Tahé</strong>, janeiro de 2006</p>
 
 
 
